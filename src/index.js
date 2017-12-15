@@ -10,14 +10,14 @@ import $ from 'jquery';
 import 'materialize-css';
 import Icon from './img/materialize_icon-400x400.png';
 import img5k from './img/big_image.jpg';
-import printMe from "./print";
+//import printMe from "./print";
 
 (function($){
     $(function(){
 
         $('.button-collapse').sideNav();
 
-        $('.maticon').html('<img src="' + Icon + '">');
+        /*$('.maticon').html('<img src="' + Icon + '">');
 
         $('.maticon').append('<img src="' + img5k + '">');
 
@@ -26,6 +26,6 @@ import printMe from "./print";
         $('body')
             .append('<img src="' + img5k + '">')
             .click(printMe);
-
+        */
     }); // end of document ready
 })(jQuery); // end of jQuery name space
