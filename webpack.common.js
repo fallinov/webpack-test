@@ -1,10 +1,17 @@
 const path = require('path');
-const GoogleFontsPlugin = require("google-fonts-webpack-plugin")
+const GoogleFontsPlugin = require("google-fonts-webpack-plugin"); //Téléchargement de Google fonts
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //Simplifie la création de fichiers HTML
+const CleanWebpackPlugin = require('clean-webpack-plugin'); //Vide, nettoye le dossier /dist
 
 module.exports = {
-    entry: './src/index.js', //Fichier d'entrée
+    //entry: './src/index.js', //Fichier d'entrée
+    entry: {
+        app: './src/index.js',
+        print: './src/print.js'
+    },
     output: {
-        filename: 'bundle.js', //Fichier de sortie
+        //filename: 'bundle.js', //Fichier de sortie
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist') //Dossier de sortie
     },
     module: {
@@ -42,13 +49,17 @@ module.exports = {
                             limit: 2000000 //2Mo Si l'image dépasse cette taille, utilisera le module file-loader
                         }
                     },
-                   'image-webpack-loader', //Minimise les images, compression : sur mac installer libpng : brew install libpng et redémarrer
+                    'image-webpack-loader', //Minimise les images, compression : sur mac installer libpng : brew install libpng et redémarrer
                 ]
             },
 
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']), //Vide le dossier dist
+        new HtmlWebpackPlugin({
+            title: 'Output Management'
+        }),
         new GoogleFontsPlugin({
             fonts: [
                 {family: "Spectral SC"},
