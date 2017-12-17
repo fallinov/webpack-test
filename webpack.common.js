@@ -61,12 +61,12 @@ module.exports = {
             title: 'Output Management',
             template: './src/default_index.ejs',
         }),
-        new GoogleFontsPlugin({
+        /*new GoogleFontsPlugin({
             fonts: [
                 {family: "Spectral SC"},
             ],
             filename: "fonts/google-fonts.css",
             path: "fonts/"
-        })
+        })*/
     ],
 };
