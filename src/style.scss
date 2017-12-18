@@ -12,8 +12,24 @@ $roboto-font-path: "/../node_modules/materialize-css/dist/fonts" !default;
 $primary-color: color("materialize-red", "lighten-2") !default;
 
 .icon-block {
-    padding: 0 15px;
+  padding: 0 15px;
 }
+
 .icon-block .material-icons {
-    font-size: inherit;
+  font-size: inherit;
+}
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+/* Ajout la même marge au liste accordéons qu'aux autres éléments de liste */
+nav.side-nav.fixed ul.collapsible-accordion a.collapsible-header {
+  padding: 0 30px;
 }

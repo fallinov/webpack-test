@@ -59,7 +59,8 @@ module.exports = {
         new CleanWebpackPlugin(['dist']), //Vide le dossier dist
         new HtmlWebpackPlugin({
             title: 'Output Management',
-            template: './src/default_index.ejs',
+            template: './src/base.ejs',
+            //template: './src/default_index.ejs',
         }),
         /*new GoogleFontsPlugin({
             fonts: [
